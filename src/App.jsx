@@ -1,18 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Componente1 from './components/componente1.jsx'
+import CabeceraCV from "./components/CabeceraCV.jsx";
+import Perfil from "./components/Perfil.jsx";
+import Educacion from "./components/Educacion.jsx";
+import Experiencia from "./components/Experiencia.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Componente1></Componente1>
-
-    </>
-  )
+    <div className="cv-container">
+      <div className="cv-content">
+        <CabeceraCV />
+        <Perfil />
+        <Experiencia />
+        <Educacion />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

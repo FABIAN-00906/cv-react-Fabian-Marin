@@ -1,68 +1,102 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Imagen del CV en la cabecera */
+.foto-perfil {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #b28cff;
+  display: block;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 0 15px rgba(178, 140, 255, 0.3);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Opcional: centrar contenido del header */
+.cabecera {
+  text-align: center;
 }
 
+/* === Estilo Global === */
 body {
   margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  color: #eaeaea;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Contenedor general centrado === */
+.cv-container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* === Caja principal del CV === */
+.cv-content {
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  background: #121212;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* === Cabecera con foto === */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Foto */
+.header-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #b28cff;
+  box-shadow: 0 0 10px rgba(178, 140, 255, 0.3);
+}
+
+/* Texto de la cabecera */
+.header-info h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header-info h2 {
+  margin: 5px 0 10px 0;
+  font-size: 20px;
+  color: #b28cff;
+}
+
+.header-info p {
+  margin: 3px 0;
+  line-height: 1.4;
+  color: #eaeaea;
+}
+
+/* === Títulos === */
+h3 {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #d09cff;
+}
+
+/* Listas */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Strong */
+strong {
+  color: #c8a2ff;
 }
