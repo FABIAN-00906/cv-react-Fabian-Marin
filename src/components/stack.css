@@ -1,0 +1,40 @@
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #eee;
+  color: #111;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+/* colores por tipo */
+.tag-frontend {
+  background: #dbeafe; /* azul claro */
+  color: #0f172a;
+}
+
+.tag-backend {
+  background: #dcfce7; /* verde claro */
+  color: #052e16;
+}
+
+.tag-db {
+  background: #fff7ed; /* naranja claro */
+  color: #7c2d12;
+}
+
+.tag-default {
+  background: #f3f4f6; /* gris claro */
+  color: #111827;
+}
