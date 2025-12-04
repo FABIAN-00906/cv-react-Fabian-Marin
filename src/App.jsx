@@ -6,6 +6,7 @@ import Experiencia from "./components/Experiencia";
 import Educacion from "./components/Educacion";
 import StackTecnologias from "./components/StackTecnologias";
 import ToggleHabilidades from "./components/ToggleHabilidades";
+import FormularioTecnologia from "./components/FormularioTecnologia";
 
 import {
   datosPersonales,
@@ -22,9 +23,23 @@ import "./index.css";
 
 function App() {
   const [mostrarHabilidades, setMostrarHabilidades] = useState(true);
+  const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
 
   const toggleHabilidades = () => {
     setMostrarHabilidades((prev) => !prev);
+  };
+
+  const agregarTecnologia = (nueva) => {
+    const existe = tecnologias.some(
+      (t) => t.nombre.toLowerCase() === nueva.nombre.toLowerCase()
+    );
+
+    if (existe) {
+      alert("La tecnología ya existe en el stack.");
+      return;
+    }
+
+    setTecnologias((prev) => [...prev, nueva]);
   };
 
   return (
@@ -35,7 +50,9 @@ function App() {
         <Experiencia experiencias={experiencia} />
         <Educacion estudios={educacion} talleres={talleres} />
 
-        <StackTecnologias tecnologias={tecnologiasIniciales} />
+        <StackTecnologias tecnologias={tecnologias} />
+
+        <FormularioTecnologia onAgregar={agregarTecnologia} />
 
         <ToggleHabilidades
           habilidades={habilidades}
@@ -43,7 +60,6 @@ function App() {
           onToggle={toggleHabilidades}
         />
 
-        {/* <Proyectos proyectos={proyectos} /> */}
       </div>
     </div>
   );
