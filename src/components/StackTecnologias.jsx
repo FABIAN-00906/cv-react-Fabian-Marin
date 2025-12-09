@@ -40,6 +40,12 @@ export default function StackTecnologias() {
   return (
     <section>
       <h3>Stack de Tecnologías</h3>
+
+      {}
+      <p style={{ fontSize: "14px", marginBottom: "10px" }}>
+        Tecnologías que utilizo actualmente
+      </p>
+
       <div className="tags-container">
         {tecnologias.map((tech) => (
           <span key={tech.id} className={obtenerClaseColor(tech.tipo)}>
