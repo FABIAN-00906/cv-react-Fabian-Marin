@@ -1,38 +1,32 @@
-.cabecera {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
+* {
+  box-sizing: border-box;
 }
 
-.foto-perfil {
-  width: 130px;       /* Ajusta el tamaño fijo */
-  height: 130px;      /* Para que sea cuadrada */
-  object-fit: cover;  /* Recorta sin deformar */
-  border-radius: 50%; /* La hace redonda (opcional) */
-  margin-bottom: 1rem;
-  border: 3px solid #ddd;
-}
-
-
-/* === Estilo Global === */
 body {
   margin: 0;
   padding: 0;
   background: #0d0d0d;
   color: #eaeaea;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
 }
 
-/* === Contenedor general centrado === */
+
+a {
+  color: #b28cff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .cv-container {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
 }
 
-/* === Caja principal del CV === */
 .cv-content {
   max-width: 800px;
   width: 100%;
@@ -43,7 +37,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* === Cabecera con foto === */
+
 .header-container {
   display: flex;
   align-items: center;
@@ -51,17 +45,24 @@ body {
   margin-bottom: 25px;
 }
 
-/* Foto */
-.header-photo {
+.header-photo,
+.foto-perfil {   
   width: 130px;
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #b28cff;
   box-shadow: 0 0 10px rgba(178, 140, 255, 0.3);
+  transition: 0.3s;
 }
 
-/* Texto de la cabecera */
+.header-photo:hover,
+.foto-perfil:hover {    
+  transform: scale(1.03);
+  box-shadow: 0 0 18px rgba(178, 140, 255, 0.6);
+}
+
+
 .header-info h1 {
   margin: 0;
   font-size: 34px;
@@ -77,27 +78,89 @@ body {
 
 .header-info p {
   margin: 3px 0;
-  line-height: 1.4;
   color: #eaeaea;
 }
 
-/* === Títulos === */
+
 h3 {
-  margin-top: 25px;
+  margin-top: 28px;
+  margin-bottom: 12px;
   font-size: 22px;
   color: #d09cff;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Listas */
+section {
+  margin-bottom: 25px;
+}
+
+
 ul {
   padding-left: 20px;
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 
-/* Strong */
 strong {
   color: #c8a2ff;
+}
+
+button {
+  background: #b28cff;
+  border: none;
+  padding: 10px 14px;
+  color: #121212;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: #d3b6ff;
+  transform: scale(1.03);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #b28cff;
+}
+
+
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-photo,
+  .foto-perfil {
+    width: 110px;
+    height: 110px;
+  }
+
+  .cv-content {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
 }
